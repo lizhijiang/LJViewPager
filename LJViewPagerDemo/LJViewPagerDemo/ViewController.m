@@ -34,11 +34,12 @@
     self.viewPager.viewPagerDateSource = self;
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;
+    self.tabView.titles = @[@"TabA", @"TabB", @"TabC"];
     self.viewPager.tabView = self.tabView;
     
-    self.tabView.titles = @[@"AA", @"BB", @"CC"];
     self.tabView.selectedTextColor = [UIColor redColor];
     self.tabView.indicatorColor = [UIColor redColor];
+    self.tabView.separatorColor = [UIColor lightGrayColor];
     
     
 }

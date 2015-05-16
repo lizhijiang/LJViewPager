@@ -45,7 +45,7 @@
     self.selectedTextColor = [UIColor blackColor];
     self.textFont = [UIFont systemFontOfSize:14];
     self.indicatorColor = [UIColor blackColor];
-    self.separatorColor = [UIColor grayColor];
+    self.separatorColor = [UIColor lightGrayColor];
     
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
     self.layer.masksToBounds = NO;

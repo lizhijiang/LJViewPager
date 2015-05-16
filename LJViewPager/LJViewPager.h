@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LJTabView.h"
 
-@class LJTabView;
 @class LJViewPager;
 
 @protocol LJViewPagerDataSource <NSObject>

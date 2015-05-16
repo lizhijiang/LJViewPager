@@ -17,6 +17,7 @@
     [self.view addSubview:view];
     
     UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"ViewController1";
     label.font = [UIFont systemFontOfSize:40];
