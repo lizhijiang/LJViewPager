@@ -1,7 +1,7 @@
 # LJViewPager
 
 ##Description
-!、[](https://imgflip.com/gif/lksv8)
+![](https://imgflip.com/gif/lksv8)
 
 LJViewPager is a subclass of UIScrollView, it can help you to add two or more sub UIViewController's view into one UIViewController, and switch between them with paging scroll.
 
