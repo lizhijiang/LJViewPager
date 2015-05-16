@@ -1,7 +1,7 @@
 # LJViewPager
 
 ##Description
-![](https://i.imgflip.com/lksv8.gif)
+![](https://i.imgflip.com/ll6dl.gif)
 
 LJViewPager is a subclass of UIScrollView, it can help you to add two or more sub UIViewController's view into one UIViewController, and switch between them with paging scroll.
 
@@ -15,7 +15,7 @@ LJViewPager uses ARC and requires iOS 7.0+. Works for iPhone and iPad.
 ##Usage
 (see sample Xcode project in /LJViewPagerDemo)
 
-Conforming to Protocol(assume you already add the LJViewPager in IB):
+Conforming to Protocol(assume you already add the LJViewPager in xib):
 
 ```
 @interface ViewController : UIViewController <LJViewPagerDataSource, LJViewPagerDelegate>
@@ -37,7 +37,7 @@ Conforming to Protocol(assume you already add the LJViewPager in IB):
 
 ```
 
-LJViewPagerDataSource method:
+####LJViewPagerDataSource method:
 
 ```
 - (UIViewController *)viewPagerInViewController {
@@ -49,9 +49,9 @@ LJViewPagerDataSource method:
 }
 
 - (UIViewController *)viewPager:(LJViewPager *)viewPager controllerAtPage:(NSInteger)page {
-    switch (page) {
+        switch (page) {
         case 0:
-            return [[ViewController1 alloc] init];
+        	return [[ViewController1 alloc] init];    
         case 1:
             return [[ViewController2 alloc] init];
         case 2:
@@ -59,11 +59,11 @@ LJViewPagerDataSource method:
         default:
             break;
     }
-    return nil;
+    return nil;    
 }
 ```
 
-LJViewPagerDelegate method:
+####LJViewPagerDelegate method:
 
 ```
 - (void)viewPager:(LJViewPager *)viewPager didScrollToPage:(NSInteger)page {
@@ -73,10 +73,17 @@ LJViewPagerDelegate method:
 - (void)viewPager:(LJViewPager *)viewPager didScrollToOffset:(CGPoint)offset {
     
 }
-
 ```
 
-LJViewPager is a subclass of UIScrollView, you can comform the UIScrollViewDelegate and do whatever you want:
+####Using LJTabView:
+```
+self.tabView.titles = @[@"TabA", @"TabB", @"TabC"];
+self.viewPager.tabView = self.tabView;
+```
+
+####UIScrollViewDelegate
+
+LJViewPager is a subclass of UIScrollView, you can conform the UIScrollViewDelegate protocol and do whatever you want:
 
 ```
 @interface ViewController : UIViewController <LJViewPagerDataSource, LJViewPagerDelegate, UIScrollViewDelegate>
