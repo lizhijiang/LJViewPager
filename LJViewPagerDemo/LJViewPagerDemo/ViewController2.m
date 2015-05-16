@@ -11,17 +11,16 @@
 @implementation ViewController2
 
 - (void)viewDidLoad {
-    
+    self.title = @"VC2";
     UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
     view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    view.backgroundColor = [UIColor blueColor];
     [self.view addSubview:view];
     
     UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"ViewController2";
     label.font = [UIFont systemFontOfSize:40];
-    label.textColor = [UIColor whiteColor];
+    label.textColor = [UIColor blackColor];
     [view addSubview:label];
 
 }

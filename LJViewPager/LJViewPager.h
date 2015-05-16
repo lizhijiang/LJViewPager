@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class LJTabView;
 @class LJViewPager;
 
 @protocol LJViewPagerDataSource <NSObject>
@@ -35,10 +36,12 @@
 
 @interface LJViewPager : UIScrollView
 
+@property (strong, nonatomic) LJTabView *tabView;
+
 @property (weak, nonatomic) id<LJViewPagerDataSource> viewPagerDateSource;
 @property (weak, nonatomic) id<LJViewPagerDelegate> viewPagerDelegate;
 
-@property NSArray *viewControllers;
+@property (strong, nonatomic) NSArray *viewControllers;
 @property NSInteger currentPage;
 
 - (void)reloadData;

@@ -11,17 +11,16 @@
 @implementation ViewController3
 
 - (void)viewDidLoad {
-    
+    self.title = @"VC3";
     UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
     view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    view.backgroundColor = [UIColor greenColor];
     [self.view addSubview:view];
     
     UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"ViewController3";
     label.font = [UIFont systemFontOfSize:40];
-    label.textColor = [UIColor whiteColor];
+    label.textColor = [UIColor blackColor];
     [view addSubview:label];
 
 }

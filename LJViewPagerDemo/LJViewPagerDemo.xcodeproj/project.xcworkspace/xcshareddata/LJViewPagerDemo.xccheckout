@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BF9C01D2-FF13-483E-BB83-BD805AC54636</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LJViewPagerDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>78AFFADBB4CAED9F05E34099DC6C0CF3DD33CC6D</key>
+		<string>github.com:lizhijiang/LJViewPager.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LJViewPagerDemo/LJViewPagerDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>78AFFADBB4CAED9F05E34099DC6C0CF3DD33CC6D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:lizhijiang/LJViewPager.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>78AFFADBB4CAED9F05E34099DC6C0CF3DD33CC6D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>78AFFADBB4CAED9F05E34099DC6C0CF3DD33CC6D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LJViewPager</string>
+		</dict>
+	</array>
+</dict>
+</plist>

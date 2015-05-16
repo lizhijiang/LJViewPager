@@ -11,10 +11,12 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "LJViewPager.h"
+#import "LJTabView.h"
 
 @interface ViewController () <LJViewPagerDataSource, LJViewPagerDelegate, UIScrollViewDelegate>
 
-@property LJViewPager *viewPager;
+@property (strong, nonatomic) LJViewPager *viewPager;
+@property (strong, nonatomic) LJTabView *tabView;
 
 @end
 
@@ -25,14 +27,19 @@
     [super viewDidLoad];
     self.title = @"LJViewPagerDemo";
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.viewPager = [[LJViewPager alloc] initWithFrame:self.view.bounds];
-    self.viewPager.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.tabView];
+    [self.view addSubview:self.viewPager];
     self.viewPager.viewPagerDateSource = self;
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;
+    self.viewPager.tabView = self.tabView;
     
-    [self.view addSubview:self.viewPager];
+    self.tabView.titles = @[@"AA", @"BB", @"CC"];
+    self.tabView.selectedTextColor = [UIColor redColor];
+    self.tabView.indicatorColor = [UIColor redColor];
+    
     
 }
 
@@ -77,5 +84,25 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //NSLog(@"offsetx = %f", scrollView.contentOffset.x);
 }
+
+- (UIView *)tabView {
+    if (_tabView == nil) {
+        int tabHeight = 40;
+        _tabView = [[LJTabView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tabHeight)];
+        _tabView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        
+    }
+    return _tabView;
+}
+
+- (LJViewPager *)viewPager {
+    if (_viewPager == nil) {
+        _viewPager = [[LJViewPager alloc] initWithFrame:CGRectMake(0, self.tabView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+        _viewPager.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+    }
+    return _viewPager;
+}
+
 
 @end

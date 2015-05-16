@@ -19,6 +19,7 @@
 		A93946BD1B0711A4000B4720 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946B81B0711A4000B4720 /* ViewController1.m */; };
 		A93946BE1B0711A4000B4720 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946BA1B0711A4000B4720 /* ViewController2.m */; };
 		A93946BF1B0711A4000B4720 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946BC1B0711A4000B4720 /* ViewController3.m */; };
+		A93946C21B073E5E000B4720 /* LJTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946C11B073E5E000B4720 /* LJTabView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		A93946BA1B0711A4000B4720 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		A93946BB1B0711A4000B4720 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		A93946BC1B0711A4000B4720 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		A93946C01B073E5E000B4720 /* LJTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJTabView.h; sourceTree = "<group>"; };
+		A93946C11B073E5E000B4720 /* LJTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJTabView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				A93946B21B071185000B4720 /* LJViewPager.m */,
 				A93946B31B071185000B4720 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.h */,
 				A93946B41B071185000B4720 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m */,
+				A93946C01B073E5E000B4720 /* LJTabView.h */,
+				A93946C11B073E5E000B4720 /* LJTabView.m */,
 			);
 			name = LJViewPager;
 			path = ../../LJViewPager;
@@ -256,6 +261,7 @@
 				A93946BE1B0711A4000B4720 /* ViewController2.m in Sources */,
 				A93946B61B071185000B4720 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
 				A93946B51B071185000B4720 /* LJViewPager.m in Sources */,
+				A93946C21B073E5E000B4720 /* LJTabView.m in Sources */,
 				A93946BD1B0711A4000B4720 /* ViewController1.m in Sources */,
 				A93946911B071137000B4720 /* ViewController.m in Sources */,
 				A939468E1B071137000B4720 /* AppDelegate.m in Sources */,
