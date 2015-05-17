@@ -25,14 +25,13 @@
     [super viewDidLoad];
     self.title = @"LJViewPagerDemo";
     
-    //self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.tabBar];
     [self.view addSubview:self.viewPager];
     self.viewPager.viewPagerDateSource = self;
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;
-    //self.tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
+    self.tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
     self.viewPager.tabBar = self.tabBar;
     
     self.tabBar.selectedTextColor = [UIColor redColor];
@@ -66,12 +65,12 @@
 }
 
 - (void)viewPager:(LJViewPager *)viewPager didScrollToOffset:(CGPoint)offset {
-    //NSLog(@"viewPager offsetx = %f", offset.x);
+    
 }
 
 #pragma mark - scrollview delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //NSLog(@"offsetx = %f", scrollView.contentOffset.x);
+    
 }
 
 - (UIView *)tabBar {
@@ -85,7 +84,10 @@
 
 - (LJViewPager *)viewPager {
     if (_viewPager == nil) {
-        _viewPager = [[LJViewPager alloc] initWithFrame:CGRectMake(0, self.tabBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+        _viewPager = [[LJViewPager alloc] initWithFrame:CGRectMake(0,
+                                                                   CGRectGetMaxY(self.tabBar.frame),
+                                                                   self.view.frame.size.width,
+                                                                   self.view.frame.size.height - CGRectGetMaxY(self.tabBar.frame))];
         _viewPager.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     return _viewPager;
