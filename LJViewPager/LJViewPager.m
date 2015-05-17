@@ -7,7 +7,7 @@
 //
 
 #import "LJViewPager.h"
-#import "LJTabView.h"
+#import "LJTabBar.h"
 
 @protocol UIScrollViewDelegateAdapter <UIScrollViewDelegate>
 
@@ -131,7 +131,7 @@
         
     }
     self.viewControllers = self.mViewControllers;
-    self.tabView.viewPager = self;
+    self.tabBar.viewPager = self;
     
 }
 
@@ -148,7 +148,7 @@
         
     }
     [self endViewControllerEditing];
-    self.tabView.selectedIndex = page;
+    self.tabBar.selectedIndex = page;
 }
 
 - (void)scrollToPage:(NSInteger)page animated:(BOOL)animated {
@@ -164,7 +164,7 @@
         
     }
     [self endViewControllerEditing];
-    self.tabView.selectedIndex = page;
+    self.tabBar.selectedIndex = page;
 }
 
 #pragma mark - scroll view delegate
@@ -216,7 +216,7 @@
     if ([self.delegateAdapter respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
         [self.delegateAdapter scrollViewDidEndDecelerating:scrollView];
     }
-    self.tabView.selectedIndex = page;
+    self.tabBar.selectedIndex = page;
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
@@ -291,9 +291,9 @@
     _delegateAdapter = (id<UIScrollViewDelegateAdapter>) delegate;
 }
 
-- (void)setTabView:(LJTabView *)tabView {
-    _tabView = tabView;
-    _tabView.viewPager = self;
+- (void)setTabBar:(LJTabBar *)tabBar {
+    _tabBar = tabBar;
+    _tabBar.viewPager = self;
 }
 
 @end

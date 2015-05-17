@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LJTabView.h"
+#import "LJTabBar.h"
 
 @class LJViewPager;
 
@@ -36,7 +36,7 @@
 
 @interface LJViewPager : UIScrollView
 
-@property (strong, nonatomic) LJTabView *tabView;
+@property (strong, nonatomic) LJTabBar *tabBar;
 
 @property (weak, nonatomic) id<LJViewPagerDataSource> viewPagerDateSource;
 @property (weak, nonatomic) id<LJViewPagerDelegate> viewPagerDelegate;

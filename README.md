@@ -75,12 +75,12 @@ Conforming to Protocol(assume you already add the LJViewPager in xib):
 }
 ```
 
-####Using LJTabView:
+####Using LJTabBar:
 ```
-self.tabView = [[LJTabView alloc] initWithFrame:frame];
-self.tabView.titles = @[@"TabA", @"TabB", @"TabC"];
-self.viewPager.tabView = self.tabView;
-[self.view addSubview:self.tabview];
+LJTabBar *tabBar = [[LJTabBar alloc] initWithFrame:frame];
+tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
+self.viewPager.tabBar = tabBar;
+[self.view addSubview:tabBar];
 ```
 
 ####UIScrollViewDelegate

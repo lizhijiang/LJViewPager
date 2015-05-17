@@ -1,5 +1,5 @@
 //
-//  LJTabView.h
+//  LJTabBar.h
 //  LJViewPagerDemo
 //
 //  Created by Marco on 5/16/15.
@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class LJViewPager;
-@class LJTabView;
+@class LJTabBar;
 
-@protocol LJTabViewDelegate <NSObject>
+@protocol LJTabBarDelegate <NSObject>
 
-- (void)tabView:(LJTabView *)tabview didSelectedAtIndex:(NSUInteger)index;
+- (void)tabBar:(LJTabBar *)tabBar didSelectedItemAtIndex:(NSUInteger)index;
 
 @end
 
-@interface LJTabView : UIView
+@interface LJTabBar : UIView
 
 @property (weak, nonatomic) LJViewPager *viewPager;
 @property (assign, nonatomic) NSUInteger selectedIndex;

@@ -1,19 +1,19 @@
 
-//  LJTabView.m
+//  LJTabBar.m
 //  LJViewPagerDemo
 //
 //  Created by Marco on 5/16/15.
 //  Copyright (c) 2015 LJ. All rights reserved.
 //
 
-#import "LJTabView.h"
+#import "LJTabBar.h"
 #import "LJViewPager.h"
 
-@interface LJTabView ()
+@interface LJTabBar ()
 
 @end
 
-@implementation LJTabView
+@implementation LJTabBar
 
 - (instancetype)init {
     if (self == [super init]) {
@@ -53,6 +53,8 @@
     self.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
     self.layer.shadowOpacity = 0.5f;
     self.layer.shadowPath = shadowPath.CGPath;
+    
+    //TODO:单个tab宽度小于最小宽度后，tabBar滚动显示
     
 }
 

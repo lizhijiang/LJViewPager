@@ -11,12 +11,12 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "LJViewPager.h"
-#import "LJTabView.h"
+#import "LJTabBar.h"
 
 @interface ViewController () <LJViewPagerDataSource, LJViewPagerDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) LJViewPager *viewPager;
-@property (strong, nonatomic) LJTabView *tabView;
+@property (strong, nonatomic) LJTabBar *tabBar;
 
 @end
 
@@ -29,17 +29,17 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.view addSubview:self.tabView];
+    [self.view addSubview:self.tabBar];
     [self.view addSubview:self.viewPager];
     self.viewPager.viewPagerDateSource = self;
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;
-    self.tabView.titles = @[@"TabA", @"TabB", @"TabC"];
-    self.viewPager.tabView = self.tabView;
+    self.tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
+    self.viewPager.tabBar = self.tabBar;
     
-    self.tabView.selectedTextColor = [UIColor redColor];
-    self.tabView.indicatorColor = [UIColor redColor];
-    self.tabView.separatorColor = [UIColor lightGrayColor];
+    self.tabBar.selectedTextColor = [UIColor redColor];
+    self.tabBar.indicatorColor = [UIColor redColor];
+    self.tabBar.separatorColor = [UIColor lightGrayColor];
     
     
 }
@@ -86,19 +86,19 @@
     //NSLog(@"offsetx = %f", scrollView.contentOffset.x);
 }
 
-- (UIView *)tabView {
-    if (_tabView == nil) {
+- (UIView *)tabBar {
+    if (_tabBar == nil) {
         int tabHeight = 40;
-        _tabView = [[LJTabView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tabHeight)];
-        _tabView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _tabBar = [[LJTabBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tabHeight)];
+        _tabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
     }
-    return _tabView;
+    return _tabBar;
 }
 
 - (LJViewPager *)viewPager {
     if (_viewPager == nil) {
-        _viewPager = [[LJViewPager alloc] initWithFrame:CGRectMake(0, self.tabView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+        _viewPager = [[LJViewPager alloc] initWithFrame:CGRectMake(0, self.tabBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
         _viewPager.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
     }
