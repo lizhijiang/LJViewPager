@@ -20,7 +20,13 @@
 @interface LJTabBar : UIView
 
 @property (weak, nonatomic) LJViewPager *viewPager;
+@property (weak, nonatomic) id<LJTabBarDelegate> delegate;
+
+/** default is 4 */
+@property (assign, nonatomic) NSInteger itemsPerPage;
+
 @property (assign, nonatomic) NSUInteger selectedIndex;
+
 @property (strong, nonatomic) UIView *indicatorView;
 @property (assign, nonatomic) CGFloat indicatorViewHeight;
 
@@ -28,6 +34,7 @@
 @property (strong, nonatomic) UIFont *textFont;
 @property (strong, nonatomic) UIColor *textColor;
 @property (strong, nonatomic) UIColor *selectedTextColor;
+@property (strong, nonatomic) UIColor *tintColor;
 @property (strong, nonatomic) UIColor *indicatorColor;
 @property (strong, nonatomic) UIColor *separatorColor;
 

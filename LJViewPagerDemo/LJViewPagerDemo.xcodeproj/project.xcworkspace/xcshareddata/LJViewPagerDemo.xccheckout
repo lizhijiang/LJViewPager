@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>BF9C01D2-FF13-483E-BB83-BD805AC54636</string>
 	<key>IDESourceControlProjectName</key>
-	<string>LJViewPagerDemo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>78AFFADBB4CAED9F05E34099DC6C0CF3DD33CC6D</key>
 		<string>github.com:lizhijiang/LJViewPager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LJViewPagerDemo/LJViewPagerDemo.xcodeproj</string>
+	<string>LJViewPagerDemo/LJViewPagerDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>78AFFADBB4CAED9F05E34099DC6C0CF3DD33CC6D</key>
