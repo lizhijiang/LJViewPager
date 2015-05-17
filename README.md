@@ -1,9 +1,10 @@
 # LJViewPager
 
 ##Description
-![](https://i.imgflip.com/ll6dl.gif)
+![](https://i.imgflip.com/lmn33.gif) 
+![](https://i.imgflip.com/lmmxg.gif)
 
-LJViewPager is a subclass of UIScrollView, it can help you to add two or more sub UIViewController's view into one UIViewController, and switch between them with paging scroll.
+LJViewPager is a subclass of UIScrollView, it can help you to add one or two or more sub UIViewController's view into one UIViewController, and switch between them with paging scroll.
 
 ##Installation
 * Drag the LJViewPager/LJViewPager folder into your project.
@@ -15,7 +16,7 @@ LJViewPager uses ARC and requires iOS 7.0+. Works for iPhone and iPad.
 ##Usage
 (see sample Xcode project in /LJViewPagerDemo)
 
-Conforming to Protocol(assume you already add the LJViewPager in xib):
+Add the view and Conforming to Protocol:
 
 ```
 @interface ViewController : UIViewController <LJViewPagerDataSource, LJViewPagerDelegate>
@@ -27,8 +28,10 @@ Conforming to Protocol(assume you already add the LJViewPager in xib):
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.viewPager.viewPagerDateSource = self;
-    self.viewPager.viewPagerDelegate = self;
+    LJViewPager *viewPager = [[LJViewPager alloc] initWithFrame:frame];
+    viewPager.viewPagerDateSource = self;
+    viewPager.viewPagerDelegate = self;
+    [self.view addSubview:viewPager];
     
 }
 
@@ -45,21 +48,11 @@ Conforming to Protocol(assume you already add the LJViewPager in xib):
 }
 
 - (NSInteger)numbersOfPage {
-    return 3;
+    return 6;
 }
 
 - (UIViewController *)viewPager:(LJViewPager *)viewPager controllerAtPage:(NSInteger)page {
-        switch (page) {
-        case 0:
-        	return [[ViewController1 alloc] init];    
-        case 1:
-            return [[ViewController2 alloc] init];
-        case 2:
-            return [[ViewController3 alloc] init];
-        default:
-            break;
-    }
-    return nil;    
+    return [[SubViewControlle alloc] initWithIndex:page];
 }
 ```
 
@@ -79,6 +72,8 @@ Conforming to Protocol(assume you already add the LJViewPager in xib):
 ```
 LJTabBar *tabBar = [[LJTabBar alloc] initWithFrame:frame];
 tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
+tabBar.selectedTextColor = [UIColor redColor];
+tabBar.indicatorColor = [UIColor redColor];
 self.viewPager.tabBar = tabBar;
 [self.view addSubview:tabBar];
 ```
