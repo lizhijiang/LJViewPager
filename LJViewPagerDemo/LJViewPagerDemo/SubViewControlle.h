@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController1 : UIViewController
+@interface SubViewControlle : UIViewController
+
+- (instancetype)initWithIndex:(NSInteger)index;
 
 @end

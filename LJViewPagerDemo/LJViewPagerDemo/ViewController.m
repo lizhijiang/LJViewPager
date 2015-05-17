@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ViewController1.h"
-#import "ViewController2.h"
-#import "ViewController3.h"
+#import "SubViewControlle.h"
 #import "LJViewPager.h"
 #import "LJTabBar.h"
 
@@ -27,19 +25,19 @@
     [super viewDidLoad];
     self.title = @"LJViewPagerDemo";
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.tabBar];
     [self.view addSubview:self.viewPager];
     self.viewPager.viewPagerDateSource = self;
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;
-    self.tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
+    //self.tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
     self.viewPager.tabBar = self.tabBar;
     
     self.tabBar.selectedTextColor = [UIColor redColor];
     self.tabBar.indicatorColor = [UIColor redColor];
-    self.tabBar.separatorColor = [UIColor lightGrayColor];
+    //self.tabBar.separatorColor = [UIColor whiteColor];
     
     
 }
@@ -56,21 +54,11 @@
 }
 
 - (NSInteger)numbersOfPage {
-    return 3;
+    return 6;
 }
 
 - (UIViewController *)viewPager:(LJViewPager *)viewPager controllerAtPage:(NSInteger)page {
-    switch (page) {
-        case 0:
-            return [[ViewController1 alloc] init];
-        case 1:
-            return [[ViewController2 alloc] init];
-        case 2:
-            return [[ViewController3 alloc] init];
-        default:
-            break;
-    }
-    return nil;
+    return [[SubViewControlle alloc] initWithIndex:page + 1];
 }
 
 #pragma mark - pager view delegate
@@ -89,9 +77,8 @@
 - (UIView *)tabBar {
     if (_tabBar == nil) {
         int tabHeight = 40;
-        _tabBar = [[LJTabBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tabHeight)];
+        _tabBar = [[LJTabBar alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, tabHeight)];
         _tabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
     }
     return _tabBar;
 }
@@ -100,7 +87,6 @@
     if (_viewPager == nil) {
         _viewPager = [[LJViewPager alloc] initWithFrame:CGRectMake(0, self.tabBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
         _viewPager.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
     }
     return _viewPager;
 }
