@@ -5,7 +5,7 @@ LJViewPager is easy to help you to add sub viewControllers into one parent viewC
 
 ![](https://i.imgflip.com/lmn33.gif) 
 ![](https://i.imgflip.com/lmmxg.gif)
-![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot1.png?raw=true)
+![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot1.png?raw=true =260x)
 
 
 ##Installation
@@ -78,6 +78,17 @@ tabBar.selectedTextColor = [UIColor redColor];
 tabBar.indicatorColor = [UIColor redColor];
 self.viewPager.tabBar = tabBar;
 [self.view addSubview:tabBar];
+```
+
+set tab icons:
+
+```
+self.tabBar.iconImages = @[[UIImage imageNamed:@"icon_test1"],
+                           [UIImage imageNamed:@"icon_test2"],
+                           [UIImage imageNamed:@"icon_test3"]];
+self.tabBar.selectedIconImages = @[[UIImage imageNamed:@"icon_test1_selected"],
+                                   [UIImage imageNamed:@"icon_test2_selected"],
+                                   [UIImage imageNamed:@"icon_test3_selected"]];
 ```
 
 ####UIScrollViewDelegate
