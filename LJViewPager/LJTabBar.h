@@ -31,10 +31,11 @@
 @property (assign, nonatomic) CGFloat indicatorViewHeight;
 
 @property (strong, nonatomic) NSArray *titles;
+@property (strong, nonatomic) NSArray *iconImages;
+@property (strong, nonatomic) NSArray *selectedIconImages;
 @property (strong, nonatomic) UIFont *textFont;
 @property (strong, nonatomic) UIColor *textColor;
 @property (strong, nonatomic) UIColor *selectedTextColor;
-@property (strong, nonatomic) UIColor *tintColor;
 @property (strong, nonatomic) UIColor *indicatorColor;
 @property (strong, nonatomic) UIColor *separatorColor;
 

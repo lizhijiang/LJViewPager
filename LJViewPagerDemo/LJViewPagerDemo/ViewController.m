@@ -32,6 +32,12 @@
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;
     self.tabBar.titles = @[@"TabA", @"TabB", @"TabC"];
+    self.tabBar.iconImages = @[[UIImage imageNamed:@"icon_test1"],
+                               [UIImage imageNamed:@"icon_test2"],
+                               [UIImage imageNamed:@"icon_test3"]];
+    self.tabBar.selectedIconImages = @[[UIImage imageNamed:@"icon_test1_selected"],
+                                       [UIImage imageNamed:@"icon_test2_selected"],
+                                       [UIImage imageNamed:@"icon_test3_selected"]];
     self.viewPager.tabBar = self.tabBar;
     
     self.tabBar.selectedTextColor = [UIColor redColor];
@@ -75,7 +81,7 @@
 
 - (UIView *)tabBar {
     if (_tabBar == nil) {
-        int tabHeight = 40;
+        int tabHeight = 44;
         _tabBar = [[LJTabBar alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, tabHeight)];
         _tabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }

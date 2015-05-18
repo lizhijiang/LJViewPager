@@ -18,6 +18,7 @@
 		A93946B61B071185000B4720 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946B41B071185000B4720 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m */; };
 		A93946BD1B0711A4000B4720 /* SubViewControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946B81B0711A4000B4720 /* SubViewControlle.m */; };
 		A93946C21B073E5E000B4720 /* LJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A93946C11B073E5E000B4720 /* LJTabBar.m */; };
+		A9C5C0791B09E1E80029463A /* screenshots in Resources */ = {isa = PBXBuildFile; fileRef = A9C5C0781B09E1E80029463A /* screenshots */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A93946B81B0711A4000B4720 /* SubViewControlle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewControlle.m; sourceTree = "<group>"; };
 		A93946C01B073E5E000B4720 /* LJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJTabBar.h; sourceTree = "<group>"; };
 		A93946C11B073E5E000B4720 /* LJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJTabBar.m; sourceTree = "<group>"; };
+		A9C5C0781B09E1E80029463A /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = screenshots; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				A93946951B071137000B4720 /* Images.xcassets */,
 				A93946971B071137000B4720 /* LaunchScreen.xib */,
 				A93946881B071137000B4720 /* Supporting Files */,
+				A9C5C0781B09E1E80029463A /* screenshots */,
 			);
 			path = LJViewPagerDemo;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C5C0791B09E1E80029463A /* screenshots in Resources */,
 				A93946941B071137000B4720 /* Main.storyboard in Resources */,
 				A93946991B071137000B4720 /* LaunchScreen.xib in Resources */,
 				A93946961B071137000B4720 /* Images.xcassets in Resources */,

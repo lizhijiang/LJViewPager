@@ -81,7 +81,7 @@
 }
 
 #pragma mark -
-- (void)addTab:(NSString *)title AtIndex:(NSUInteger)index {
+- (void)addTabAtIndex:(NSUInteger)index {
     int tabCount = 0;
     for (UIView *view in self.tabContainerView.subviews) {
         tabCount += view.tag >= 0;
@@ -124,7 +124,18 @@
     CGRect frame = CGRectMake(x, 0, tabWidth, height);
     UIButton *tabButton = [[UIButton alloc] initWithFrame:frame];
     tabButton.tag = index;
-    [tabButton setTitle:title forState:UIControlStateNormal];
+    
+    UIImage *icon = self.iconImages.count >= index + 1 ? self.iconImages[index] : nil;
+    if (icon) {
+        NSAssert([icon isKindOfClass:[UIImage class]], @"icon image is not an UIImage object!");
+        [tabButton setImage:icon forState:UIControlStateNormal];
+        UIImage *selectedIcon = self.selectedIconImages.count >= index + 1 ? self.selectedIconImages[index] : nil;
+        [tabButton setImage:selectedIcon forState:UIControlStateSelected];
+    } else {
+        UIViewController *vc = self.viewPager.viewControllers[index];
+        NSString *title = self.titles.count >= index + 1 ? self.titles[index] : vc.title;
+        [tabButton setTitle:title forState:UIControlStateNormal];
+    }
     [tabButton setTitleColor:self.textColor forState:UIControlStateNormal];
     [tabButton setTitleColor:self.selectedTextColor forState:UIControlStateSelected];
     tabButton.tintColor = self.tintColor;
@@ -146,8 +157,6 @@
     for (UIView *view in self.tabContainerView.subviews) {
         tabCount += view.tag >= 0;
     }
-    //float width = self.frame.size.width / tabCount;
-    //width = width < self.tabItemMinWidth ? self.tabItemMinWidth : width;
     float height = self.indicatorViewHeight > 0 ? self.indicatorViewHeight : 2;
     float y = self.frame.size.height - height;
     self.indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.tabItemWidth, height)];
@@ -203,9 +212,7 @@
         [view removeFromSuperview];
     }
     for (int i = 0; i < self.viewPager.viewControllers.count; i++) {
-        UIViewController *vc = self.viewPager.viewControllers[i];
-        NSString *title = self.titles.count >= i + 1 ? self.titles[i] : vc.title;
-        [self addTab:title AtIndex:i];
+        [self addTabAtIndex:i];
     }
     [self addIndicatorView];
     [self selectedTabAtIndex:0];
@@ -250,11 +257,6 @@
 
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
     _selectedTextColor = selectedTextColor;
-    [self resetTabs];
-}
-
-- (void)setTintColor:(UIColor *)tintColor {
-    _tintColor = tintColor;
     [self resetTabs];
 }
 
