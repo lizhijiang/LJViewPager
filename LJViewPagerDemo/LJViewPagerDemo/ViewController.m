@@ -26,8 +26,8 @@
     self.title = @"LJViewPagerDemo";
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.view addSubview:self.tabBar];
     [self.view addSubview:self.viewPager];
+    [self.view addSubview:self.tabBar];
     self.viewPager.viewPagerDateSource = self;
     self.viewPager.viewPagerDelegate = self;
     self.viewPager.delegate = self;

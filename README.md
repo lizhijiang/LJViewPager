@@ -5,7 +5,7 @@ LJViewPager is easy to help you to add sub viewControllers into one parent viewC
 
 ![](https://i.imgflip.com/lmn33.gif) 
 ![](https://i.imgflip.com/lmmxg.gif)
-![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot0.png?raw=true =260x)
+![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot1.png?raw=true =260x)
 
 
 ##Installation
