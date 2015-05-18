@@ -4,7 +4,7 @@
 ![](https://i.imgflip.com/lmn33.gif) 
 ![](https://i.imgflip.com/lmmxg.gif)
 
-LJViewPager is a subclass of UIScrollView, it can help you to add one or two or more sub UIViewController's view into one UIViewController, and switch between them with paging scroll.
+LJViewPager is easy to help you to add sub viewControllers into one parent viewController and scroll left and right to switch between them, and there is a convenient way to add a tab for each sub viewController.
 
 ##Installation
 * Drag the LJViewPager/LJViewPager folder into your project.
@@ -16,7 +16,7 @@ LJViewPager uses ARC and requires iOS 7.0+. Works for iPhone and iPad.
 ##Usage
 (see sample Xcode project in /LJViewPagerDemo)
 
-Add the view and Conforming to Protocol:
+Add the view and conform to Protocol:
 
 ```
 @interface ViewController : UIViewController <LJViewPagerDataSource, LJViewPagerDelegate>
