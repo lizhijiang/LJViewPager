@@ -197,9 +197,9 @@
         }
     }
     
-    CGRect indicatorViewFrame = self.indicatorView.frame;
-    indicatorViewFrame.origin.x = self.tabItemWidth * index;
-    self.indicatorView.frame = indicatorViewFrame;
+    //CGRect indicatorViewFrame = self.indicatorView.frame;
+    //indicatorViewFrame.origin.x = self.tabItemWidth * index;
+    //self.indicatorView.frame = indicatorViewFrame;
 }
 
 - (void)resetTabs {
