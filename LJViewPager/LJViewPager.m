@@ -175,6 +175,11 @@
     if ([self.delegateAdapter respondsToSelector:@selector(scrollViewDidScroll:)]) {
         [self.delegateAdapter scrollViewDidScroll:scrollView];
     }
+    if (self.tabBar) {
+        CGRect tabIndicatorFrame = self.tabBar.indicatorView.frame;
+        tabIndicatorFrame.origin.x = scrollView.contentOffset.x / self.tabBar.itemsPerPage;
+        self.tabBar.indicatorView.frame = tabIndicatorFrame;
+    }
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {

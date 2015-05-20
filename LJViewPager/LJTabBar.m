@@ -199,12 +199,7 @@
     
     CGRect indicatorViewFrame = self.indicatorView.frame;
     indicatorViewFrame.origin.x = self.tabItemWidth * index;
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                            self.indicatorView.frame = indicatorViewFrame;
-                        }
-                     completion:nil];
+    self.indicatorView.frame = indicatorViewFrame;
 }
 
 - (void)resetTabs {
