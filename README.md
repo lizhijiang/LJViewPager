@@ -3,8 +3,8 @@
 ##Description
 LJViewPager is easy to help you to add sub viewControllers into one parent viewController and scroll left and right to switch between them, and there is a convenient way to add a tab for each sub viewController.
 
-![](https://i.imgflip.com/lmn33.gif) 
-![](https://i.imgflip.com/lmmxg.gif)
+![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot2.gif) 
+![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot3.gif)
 ![](https://github.com/lizhijiang/LJViewPager/blob/master/LJViewPagerDemo/screenshots/screenshot1.png?raw=true =260x)
 
 
