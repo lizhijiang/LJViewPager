@@ -82,11 +82,13 @@
 
 #pragma mark -
 - (void)addTabAtIndex:(NSUInteger)index {
-    int tabCount = 0;
-    for (UIView *view in self.tabContainerView.subviews) {
-        tabCount += view.tag >= 0;
-    }
-    
+    int tabCount = ({
+        int tabCount = 0;
+        for (UIView *view in self.tabContainerView.subviews) {
+            tabCount += view.tag >= 0;
+        }
+        tabCount;
+    });
     float tabWidth = self.frame.size.width / (tabCount + 1);
     tabWidth = tabWidth < self.tabItemMinWidth ? self.tabItemMinWidth : tabWidth;
     float x = tabWidth * tabCount;
@@ -97,12 +99,12 @@
     for (int i = 0; i < self.tabContainerView.subviews.count; i++) {
         UIView *subView = self.tabContainerView.subviews[i];
         CGRect frame = subView.frame;
-        if (subView.tag >= 0) {
+        if (subView.tag >= 0) { // tab button
             frame.origin.x = tabWidth * tab;
             frame.size.width = tabWidth;
             tab++;
         }
-        if (subView.tag == -1) {
+        if (subView.tag == -1) { // tab separator
             frame.origin.x = tabWidth * separator;
             separator++;
         }
@@ -153,10 +155,6 @@
 }
 
 - (void)addIndicatorView {
-    int tabCount = 0;
-    for (UIView *view in self.tabContainerView.subviews) {
-        tabCount += view.tag >= 0;
-    }
     float height = self.indicatorViewHeight > 0 ? self.indicatorViewHeight : 2;
     float y = self.frame.size.height - height;
     self.indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.tabItemWidth, height)];
@@ -166,15 +164,18 @@
 }
 
 - (void)selectedTabAtIndex:(NSInteger)index {
-    int tab = 0;
-    for (int i = 0; i < self.tabContainerView.subviews.count; i++) {
-        UIView *subView = self.tabContainerView.subviews[i];
-        if (subView.tag >= 0) {
-            UIButton *tabButton = (UIButton *) subView;
-            tabButton.selected = (index == tab);
-            tab++;
+    int tab = ({
+        int tab = 0;
+        for (int i = 0; i < self.tabContainerView.subviews.count; i++) {
+            UIView *subView = self.tabContainerView.subviews[i];
+            if (subView.tag >= 0) {
+                UIButton *tabButton = (UIButton *) subView;
+                tabButton.selected = (index == tab);
+                tab++;
+            }
         }
-    }
+        tab;
+    });
     if (tab == 0) {
         return;
     }
