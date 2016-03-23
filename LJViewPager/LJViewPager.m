@@ -15,10 +15,12 @@
 
 @interface LJViewPager () <UIScrollViewDelegate>
 
-@property UIViewController *viewController; // the UIViewController which the view is add in
-@property NSMutableArray *mViewControllers;
+@property (nonatomic, strong) UIViewController *viewController; // the UIViewController which the view is add in
+@property (nonatomic, strong) NSMutableArray *mViewControllers;
+@property (nonatomic, copy) NSArray *viewControllers;
+@property (nonatomic, assign) NSInteger currentPage;
 
-@property id<UIScrollViewDelegateAdapter> delegateAdapter;
+@property (nonatomic, weak) id<UIScrollViewDelegateAdapter> delegateAdapter;
 
 @end
 
@@ -76,7 +78,9 @@
     self.alwaysBounceHorizontal = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
-    self.delegate = self;
+    
+    __weak typeof(self)weakSelf = self;
+    self.delegate = weakSelf;
     
 }
 

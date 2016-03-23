@@ -41,8 +41,8 @@
 @property (weak, nonatomic) id<LJViewPagerDataSource> viewPagerDateSource;
 @property (weak, nonatomic) id<LJViewPagerDelegate> viewPagerDelegate;
 
-@property (strong, nonatomic) NSArray *viewControllers;
-@property NSInteger currentPage;
+@property (copy, nonatomic, readonly) NSArray *viewControllers;
+@property (assign, nonatomic, readonly) NSInteger currentPage;
 
 - (void)reloadData;
 /**

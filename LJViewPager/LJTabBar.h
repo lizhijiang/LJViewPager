@@ -11,6 +11,15 @@
 @class LJViewPager;
 @class LJTabBar;
 
+/*
+@protocol LJTabBarDataSource <NSObject>
+
+- (NSUInteger)numberOfTab;
+- (UIView *)tabbar:(LJTabBar *)tabBar customViewOfTabAtIndex:(NSUInteger)index;
+
+@end
+ */
+
 @protocol LJTabBarDelegate <NSObject>
 
 - (void)tabBar:(LJTabBar *)tabBar didSelectedItemAtIndex:(NSUInteger)index;
@@ -20,9 +29,10 @@
 @interface LJTabBar : UIView
 
 @property (weak, nonatomic) LJViewPager *viewPager;
+//@property (weak, nonatomic) id<LJTabBarDataSource> dataSource;
 @property (weak, nonatomic) id<LJTabBarDelegate> delegate;
 
-/** default is 4 */
+/** default is 4, when the number of tab is more than this, tabbar will be scrollable */
 @property (assign, nonatomic) NSInteger itemsPerPage;
 
 @property (assign, nonatomic) NSUInteger selectedIndex;
@@ -30,9 +40,9 @@
 @property (strong, nonatomic) UIView *indicatorView;
 @property (assign, nonatomic) CGFloat indicatorViewHeight;
 
-@property (strong, nonatomic) NSArray *titles;
-@property (strong, nonatomic) NSArray *iconImages;
-@property (strong, nonatomic) NSArray *selectedIconImages;
+@property (copy, nonatomic) NSArray *titles;
+@property (copy, nonatomic) NSArray *iconImages;
+@property (copy, nonatomic) NSArray *selectedIconImages;
 @property (strong, nonatomic) UIFont *textFont;
 @property (strong, nonatomic) UIColor *textColor;
 @property (strong, nonatomic) UIColor *selectedTextColor;
